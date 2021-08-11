@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_trips/foating_action_button_green.dart';
+import 'package:platzi_trips/widgets/foating_action_button_green.dart';
+
 class CardImage extends StatelessWidget{
 
   String pathImage = "assets/imgs/sunset.jpeg";
