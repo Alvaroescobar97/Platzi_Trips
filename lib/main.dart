@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
-import 'package:platzi_trips/Place/bloc/bloc_place.dart';
 import 'package:platzi_trips/User/bloc/bloc_user.dart';
-import 'package:platzi_trips/platzi_trips.dart';
+import 'package:platzi_trips/User/ui/screens/signin_screen.dart';
 
 void main() {
   // Make the top bar transparent
@@ -34,9 +33,10 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       child: MaterialApp(
         title: 'Flutter Demo',
-        home: PlatziTrips()
+        //home: PlatziTrips()
+          home: SignInScreen()
       ),
-      bloc: PlaceBloc(),
+      bloc: UserBloc(),
     );
   }
 }
