@@ -5,6 +5,7 @@ class FirebaseAuthAPI {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn googleSignIn = GoogleSignIn();
 
+  //Creo que el error es aqui en el GoogleAuthProvider.credential(idToken: null, accessToken: null) no sale la pantalla que pide las credenciales o algo esta mal
   Future<UserCredential> signIn() async {
     GoogleSignInAccount? googleSignInAccount = await googleSignIn.signIn();
     GoogleSignInAuthentication gSA = await googleSignInAccount!.authentication;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:platzi_trips/User/bloc/bloc_user.dart';
+import 'package:platzi_trips/tech_trips.dart';
 import 'package:platzi_trips/widgets/button_green.dart';
 import 'package:platzi_trips/widgets/gradient_back.dart';
 
@@ -19,6 +20,19 @@ class _SignInScreenState extends State<SignInScreen> {
     return signInGoogleUI();
   }
 
+  Widget _handleCurrentSession(){
+    return StreamBuilder(
+      builder: (BuildContext context, AsyncSnapshot snapshot){
+        if(!snapshot.hasData || snapshot.hasError){
+          return signInGoogleUI();
+        }else{
+          return TechTrips();
+        }
+      },
+      stream: userBloc.authStatus,
+    );
+  }
+
   Widget signInGoogleUI(){
     return Scaffold(
       body: Stack(
@@ -29,7 +43,7 @@ class _SignInScreenState extends State<SignInScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Welcone \n This is your Travel App",
+                "Welcome \n This is your Travel App",
                 style: TextStyle(
                     fontSize: 37.0,
                     fontFamily: "Lato",
@@ -40,7 +54,7 @@ class _SignInScreenState extends State<SignInScreen> {
               ButtonGreen(
                 text: "Login with Gmail",
                 onPressed: (){
-                  userBloc.signIn().then((value) => print(value));
+                  userBloc.signIn().then((value) => print("El usuario es: ${value}"));
                 },
                 width: 300.0,
                 height: 50.0,

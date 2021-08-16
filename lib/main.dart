@@ -1,10 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:platzi_trips/User/bloc/bloc_user.dart';
 import 'package:platzi_trips/User/ui/screens/signin_screen.dart';
+import 'package:platzi_trips/tech_trips.dart';
 
-void main() {
+void main() async {
   // Make the top bar transparent
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
@@ -12,28 +14,19 @@ void main() {
       statusBarBrightness: Brightness.light
     )
   );
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  /*
-  MaterialApp(
-      title: 'Flutter Demo',
-      home: PlatziTrips()
-    )*/
+  // This widget is the root of the application.
   @override
   Widget build(BuildContext context) {
-    
-    /*return MaterialApp(
-        title: 'Flutter Demo',
-        home: PlatziTrips()
-      );*/
-
     return BlocProvider(
       child: MaterialApp(
         title: 'Flutter Demo',
-        //home: PlatziTrips()
+        //home: TechTrips()
           home: SignInScreen()
       ),
       bloc: UserBloc(),

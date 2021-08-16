@@ -5,14 +5,14 @@ import 'package:platzi_trips/Place/ui/screens/home_trips.dart';
 import 'package:platzi_trips/Place/ui/screens/search_trips.dart';
 import 'package:platzi_trips/User/ui/screens/profile_trips.dart';
 
-class PlatziTrips extends StatefulWidget{
+class TechTrips extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-    return _PlatziTrips();
+    return _TechTrips();
   }
 }
 
-class _PlatziTrips extends State<PlatziTrips>{
+class _TechTrips extends State<TechTrips>{
   
   int indexTap = 0;
 
