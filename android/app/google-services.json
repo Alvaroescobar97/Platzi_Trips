@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "903207853637-vjkqm5o41eeroa1fdae94b36a1mng98j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.platzi_trips",
+            "certificate_hash": "694a9262427028a1606143cf758fe2f2259fc11b"
+          }
+        },
+        {
           "client_id": "903207853637-fp9f7u2gicm93g3d77t14bm17skp440v.apps.googleusercontent.com",
           "client_type": 3
         }

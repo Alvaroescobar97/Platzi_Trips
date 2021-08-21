@@ -14,8 +14,12 @@ class UserBloc implements Bloc {
 
   //Casos de uso
   //1. SingIn a la app con Google
-  Future<UserCredential> signIn(){
+  Future<User?> signIn(){
     return _auth_repository.signInFirebase();
+  }
+  //2. SignOut
+  signOut(){
+    _auth_repository.signOutFirebase();
   }
 
   @override

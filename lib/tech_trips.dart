@@ -26,7 +26,7 @@ class _TechTrips extends State<TechTrips>{
   
   @override
   Widget build(BuildContext context) {
-    final placeBloc = BlocProvider.of<PlaceBloc>(context);
+
     return Scaffold(
       body: widgetsChildren[indexTap],
       bottomNavigationBar: Theme(

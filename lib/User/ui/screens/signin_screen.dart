@@ -17,11 +17,12 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     userBloc = BlocProvider.of(context);
-    return signInGoogleUI();
+    return _handleCurrentSession();
   }
 
   Widget _handleCurrentSession(){
     return StreamBuilder(
+      stream: userBloc.authStatus,
       builder: (BuildContext context, AsyncSnapshot snapshot){
         if(!snapshot.hasData || snapshot.hasError){
           return signInGoogleUI();
@@ -29,7 +30,6 @@ class _SignInScreenState extends State<SignInScreen> {
           return TechTrips();
         }
       },
-      stream: userBloc.authStatus,
     );
   }
 
